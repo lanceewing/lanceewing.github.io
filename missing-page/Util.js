@@ -133,7 +133,7 @@ class Util {
     static detectEmojiVersion() {
         // These chars are from different Unicode version, starting at 6.
         let unicodeVersion = [...'🐄🙂🧀🥕🧛🧪🪓🛖'].reduce((a, c) =>  a + (Util.renderEmoji(c, 50, 50, 0, 0)[2]? 1 : 0), 5);
-        if (Util.twemoji = unicodeVersion < 13) document.body.classList.add('twemoji');
+        if (Util.twemoji = unicodeVersion < 12) document.body.classList.add('twemoji');
         console.log('UNICODE VERSION: ' + unicodeVersion);
     }
 }
