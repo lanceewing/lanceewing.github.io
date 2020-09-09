@@ -135,7 +135,6 @@ class Util {
         //let unicodeVersion = [...'🐄🙂🧀🥕🧛🧪🪓🛖'].reduce((a, c) =>  a + (Util.renderEmoji(c, 50, 50, 0, 0)[2]? 1 : 0), 5);
         //if (Util.twemoji = unicodeVersion < 13) document.body.classList.add('twemoji');
         if (Util.twemoji = !Util.renderEmoji('🩸', 100, 100, 0, 0)[2]) document.body.classList.add('twemoji');
-        //console.log('UNICODE VERSION: ' + unicodeVersion);
         Util.WIN = navigator.platform.indexOf('Win') > -1;
     }
 }
