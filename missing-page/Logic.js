@@ -45,7 +45,7 @@ class Logic {
             break;
           case 'moai statue':
             if (flags[3]) {
-              if (game.hasItem("amulet")) {
+              if (game.hasItem("magic ring")) {
                 ego.say("They're ignorning me now.");
               } else {
                 obj.say("We're hungry!");
@@ -59,18 +59,15 @@ class Logic {
           case 'family':
             game.actor.say("Happy Halloween!");
             break;
-          case 'vampire':
-            game.actor.say("I used to be a Page Boy for the King."), 450, () => {
-              game.actor.say("Then the wizard turned me into a vampire.", 500);
-            };
+          case 'body':
+            game.actor.say("I used to be a Page Boy for the King.", 450, () => {
+              game.actor.say("Then the goblin did something to me.", 500);
+            });
             break;
-          case 'wizard':
+          case 'goblin':
             game.actor.say("The Page Boy? Yes, I saw him.", 400, () => {
               game.actor.say("Told me some bad news, so I taught him a lesson.");
             });
-            break;
-          case 'scientist':
-            game.actor.say("I specialise in the study of blood.", 400);
             break;
           case 'sheep':
             e.target.parentNode.say("Baaaaa!");
@@ -124,7 +121,7 @@ class Logic {
 
           case 'woods':
             if (flags[4]) {
-              if (game.hasItem('compass') && game.hasItem('map')) {
+              if (game.hasItem('map')) {
                 game.inputEnabled = false;
                 ego.stop();
                 ego.moveTo(210, 740);
@@ -132,7 +129,7 @@ class Logic {
                 ego.moveTo(70, 555);
                 ego.moveTo(-50, 555);
               } else {
-                ego.say("I might get lost in the woods. I need a map and compass.");
+                ego.say("I might get lost in the woods. I need a map.");
               }
             } else {
               ego.say("The elephant blocks my way.");
@@ -160,7 +157,7 @@ class Logic {
               if ((thing == 'circus') && !game.hasItem('ticket')) {
                 ego.say("I need a ticket.");
               }
-              else if ((thing == 'coffin') && !game.hasItem('amulet')) {
+              else if ((thing == 'coffin') && !game.hasItem('magic ring')) {
                 ego.say("Magic is stopping me opening the coffin.");
               } 
               else {
@@ -219,7 +216,7 @@ class Logic {
                   ego.moveTo(ego.cx, 740, () => ego.moveTo(obj.x, 740, pickup));
                 } else {
                   // Inside room.
-                  if (obj.propData[0] == 12 || obj.propData[0] == 31 || obj.propData[0] == 28)  {
+                  if (obj.propData[0] == 31 || obj.propData[0] == 28)  {
                     // In my house, castle and the hospital ego can pick the items without constraint.
                     pickup();
                   }
@@ -247,14 +244,6 @@ class Logic {
         switch (thing) {
           case 'letter':
             ego.say("It's a commission from the King asking me to find his missing page boy.");
-            break;
-          case 'wastebasket':
-            if (game.hasItem('syringe')) {
-              ego.say("It's empty.");
-            } else {
-              ego.say("Syringe is inside.");
-              game.getItem('syringe', '💉');
-            }
             break;
           case 'water pistol':
             ego.say(flags[2]? "It contains water." : "It is empty.");
@@ -354,15 +343,12 @@ class Logic {
               game.actor.say("Thanks. Take my mask.");
               game.getItem('mask');
               break;
-            case 'blood,doctor':
-              game.actor.say("I'm sorry, vampire blood isn't my thing.");
-              break;
             case 'cash,salesperson':
-              if (game.hasItem('compass')) {
+              if (game.hasItem('syringe')) {
                 game.actor.say("I have nothing to sell.");
               } else {
-                game.actor.say("Here's your compass.");
-                game.getItem('compass');
+                game.actor.say("Here's your syringe.");
+                game.getItem('syringe');
               }
               break;
             case 'cash,cashier':
@@ -377,9 +363,9 @@ class Logic {
             case 'bank card,salesperson':
               game.actor.say("We only take cash.");
               break;
-            case 'chipmunk,coconut':
-              game.dropItem('coconut');
-              ego.say("The chipmunk took the coconut and ran away.");
+            case 'chipmunk,palm nut':
+              game.dropItem('palm nut');
+              ego.say("The chipmunk took the palm nut and ran away.");
               obj.propData[0] = -1;
               game.remove(obj);
               flags[6] = 1;
@@ -394,24 +380,25 @@ class Logic {
             case 'candy,moai statue':
               if (flags[3]) { // Statues are awake.
                 game.dropItem('candy');
-                obj.say("Mmmm... yummy. Here, take this amulet.");
-                game.getItem('amulet', '🧿');
+                obj.say("Mmmm... yummy. Here, take this magic ring.");
+                game.getItem('magic ring', '💍');
               } else {
                 ego.say("They're asleep.");
               }
               break;
-            case 'syringe,vampire':
+            case 'body,syringe':
               if (game.hasItem('blood')) {
                 game.actor.say("You already have my blood.");
               } else {
                 game.actor.say("Sure, take my blood. Please find a cure.");
-                game.getItem('blood', '🩸');
+                game.dropItem('syringe');
+                game.getItem('blood', '💉');
               }
               break;
-            case 'blood,scientist':
+            case 'blood,doctor':
               game.dropItem('blood');
               game.actor.say("Here, this is the cure.");
-              game.getItem('test tube', '🧪');
+              game.getItem('pill', '💊');
               break;
             case 'bellhop,moai statue':
               if (flags[3]) {
@@ -443,7 +430,7 @@ class Logic {
                 game.getItem('cash');
               }
               break;
-            case 'test tube,vampire':
+            case 'body,pill':
               // End game sequence.
               game.inputEnabled = false;
               game.actor.say("An antidote? Really? Thank you so much!", 450, () => {

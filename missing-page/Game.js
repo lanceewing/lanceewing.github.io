@@ -86,7 +86,6 @@ class Game {
 
         // Room 12 - In hospital
         [ 12,  0, 'doctor',            '👩‍⚕️', 200, 150, 1340, 450, , 1002 ],
-        [ 12,  1, 'wastebasket',       '🗑️', 40,  40,  1340, 670, , 1002 ],
 
         // Room 13 - In courthouse
         [ 13,  0, 'judge',             '👩‍⚖️', 200, 150, 2300, 450, , 1002 ],
@@ -104,19 +103,19 @@ class Game {
         [ 2,  2, 'tree',               '🌴', 300, 300,   1770,  825, 30 ],
         [ 2,  2, 'tree',               '🌴', 300, 300,   2730,  825, 30 ],
         [ 2,  2, 'tree',               '🌴', 300, 300,   3690,  825, 30 ],
-        [ 2, 30, 'department_store',   '🏬', 400, 400,   280,   700, , , 16 ],
+        [ 2, 30, 'pharmacy',           '🏬', 400, 400,   280,   700, , , 16 ],
         [ 2,  1, 'shopping_cart',      '🛒', 100, 100,   720,   650 ],
         [ 2, 30, 'store',              '🏪', 400, 400,   1240,  700, , , 17 ],
         [ 2, 30, 'post_office',        '🏤', 400, 400,   2200,  700, , , 18 ],
         [ 2, 30, 'hotel',              '🏨', 400, 400,   3160,  700, , , 19 ],
         [ 2, 30, 'house',              '🏠', 400, 400,   4120,  700, , , 20 ],
 
-        // Room 16 - In department store
+        // Room 16 - In pharmacy
         [ 16, 0, 'salesperson',        '🙎‍♂️', 200, 150,   380,   450, , 1002 ],
-        [ 16, 1, 'compass',            '🧭', 40,  40,    455,   670, , 1002 ],
+        [ 16, 1, 'syringe',            '💉', 40,  40,    455,   670, , 1002 ],
 
         // Room 17 - In store
-        [ 17, 0, 'cashier',            '🧕', 200, 150,   1340,  450, , 1002 ],
+        [ 17, 0, 'cashier',            '🙎🏽‍♀️', 200, 150,   1340,  450, , 1002 ],
         [ 17, 1, 'banana',             '🍌', 40,  40,    1340,  670, , 1002 ], 
 
         // Room 18 - In post office
@@ -237,10 +236,10 @@ class Game {
         [ 8,  18, 'door',              '🚪', 100, 200,   1250, 500, , , 30 ],
 
         // Room 29 - In coffin
-        [ 29, 0, 'vampire',            '🧛', 200, 150,   380,  450, , 1002 ],
+        [ 29, 0, 'body',               '👤', 200, 150,   380,  450, , 1002 ],
 
-        // Room 30 - In wizard's house
-        [ 30, 0, 'wizard',             '🧙', 200, 150,   860, 450, , 1002 ],
+        // Room 30 - In goblin's house
+        [ 30, 0, 'goblin',             '👺', 200, 150,   860, 450, , 1002 ],
         [ 30, 1, 'crystal_ball',       '🔮', 40,  40,    860, 670, , 1002 ],
 
         // Room 9 - Main street south east
@@ -258,7 +257,7 @@ class Game {
         [ 10,  2, 'tree',              '🌴', 300, 300,   50,   825, 30 ],
         [ 10,  2, 'tree',              '🌴', 300, 300,   810,  825, 30 ],
         [ 10,  2, 'tree',              '🌴', 300, 300,   1770, 825, 30 ],
-        [ 10,  1, 'coconut',           '🥥', 30, 30,     2000, 825 ],
+        [ 10,  1, 'palm_nut',          '🌰', 30, 30,     2000, 825 ],
         [ 10, 30, 'house',             '🏡', 400, 400,   280,  700, , , 20 ],
         [ 10, 30, 'derelict_house',    '🏚️',  400, 400,   1240, 700, , , 20 ],
 
@@ -385,7 +384,7 @@ class Game {
         this.ego.say("Hello!!", 100, () => {
             this.ego.say("I'm detective Pip.", 250, () => {
                 this.ego.say("The King has commissioned me to find his missing Page Boy.", 300, () => {
-                    this.ego.say("He was on his way to deliver a message to The Wizard...", 300, () => {
+                    this.ego.say("He was on his way to deliver a message to The Goblin...", 300, () => {
                         this.ego.moveTo(300, 740, () => {
                             this.ego.say("...but went missing in the woods to the west.", 300, () => {
                                 this.ego.moveTo(300, 800, () => {
