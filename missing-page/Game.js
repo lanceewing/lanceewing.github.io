@@ -236,7 +236,7 @@ class Game {
         [ 8,  18, 'door',              '🚪', 100, 200,   1250, 500, , , 30 ],
 
         // Room 29 - In coffin
-        [ 29, 0, 'body',               '👤', 200, 150,   380,  450, , 1002 ],
+        [ 29, 0, 'boy',                '👤', 200, 150,   380,  450, , 1002 ],
 
         // Room 30 - In goblin's house
         [ 30, 0, 'goblin',             '👺', 200, 150,   860, 450, , 1002 ],
@@ -569,7 +569,7 @@ class Game {
         this.inside = 0;
 
         // Remove the previous room's Objs from the screen.
-        this.objs.forEach(obj => obj.remove());
+        this.objs.forEach(obj => this.screen.removeChild(obj));
         this.objs = [];
 
         this.roomData = this.rooms[this.room - 1];
@@ -708,6 +708,8 @@ class Game {
             if (this.roomData[3] < 0) {
                 obj.classList.add('down');
             }
+            // Don't cache paths. Build them every time afresh. Causes issues otherwise.
+            prop[11] = null;
         }
 
         // If it is an actor, store a reference to ease of use.
