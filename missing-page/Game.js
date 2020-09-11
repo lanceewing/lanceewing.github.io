@@ -340,20 +340,20 @@ class Game {
         this.started = false;
         this.fadeOut(this.wrap);
 
-        window.ontouchstart = e => {
-            if (!this.started) {
-                this.started = true;
-                window.ontouchstart = null;
+        //window.ontouchstart = e => {
+        //    if (!this.started) {
+        //        this.started = true;
+        //        window.ontouchstart = null;
                 //if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
                 this.fadeOut(this.msg);
-                setTimeout(() => {
-                    this.msg.style.display = 'none'
-                    //this.sound.playSong();
+        //        setTimeout(() => {
+        //            this.msg.style.display = 'none'
+        //            //this.sound.playSong();
                     this.init();
                     this.loop();
-                }, 200);
-            }
-        }
+        //        }, 200);
+        //   }
+        //}
     }
 
     /**
