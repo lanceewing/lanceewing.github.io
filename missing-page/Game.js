@@ -291,10 +291,9 @@ class Game {
         this.commands = document.getElementById('commands');
         this.status = document.getElementById('status');
         this.msg = document.getElementById('msg');
-        console.log('2');
         this.defineCustomElements();
         this.logic = new Logic(this);
-        this.sound = new Sound();
+        //this.sound = new Sound();
         this.emojiMap = new Map();
         this.start();
     }
@@ -341,15 +340,15 @@ class Game {
         this.started = false;
         this.fadeOut(this.wrap);
 
-        this.wrap.onclick = this.wrap.ontouchstart = e => {
+        window.ontouchstart = e => {
             if (!this.started) {
                 this.started = true;
-                this.wrap.touchstart = this.wrap.onclick = null;
-                if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
+                window.ontouchstart = null;
+                //if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
                 this.fadeOut(this.msg);
                 setTimeout(() => {
                     this.msg.style.display = 'none'
-                    this.sound.playSong();
+                    //this.sound.playSong();
                     this.init();
                     this.loop();
                 }, 200);
