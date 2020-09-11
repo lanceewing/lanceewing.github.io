@@ -338,7 +338,7 @@ class Game {
         this.verbIcon = '🚶';
 
         this.started = false;
-        this.fadeOut(this.wrap);
+        //this.fadeOut(this.wrap);
 
         //window.ontouchstart = e => {
         //    if (!this.started) {
@@ -347,7 +347,7 @@ class Game {
                 //if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
                 this.fadeOut(this.msg);
         //        setTimeout(() => {
-        //            this.msg.style.display = 'none'
+                    this.msg.style.display = 'none'
         //            //this.sound.playSong();
                     this.init();
                     this.loop();
