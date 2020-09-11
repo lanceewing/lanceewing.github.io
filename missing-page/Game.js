@@ -340,10 +340,11 @@ class Game {
         this.started = false;
         this.fadeOut(this.wrap);
 
-        onclick = e => {
+        this.wrap.onclick = e => {
+            console.log('click');
             if (!this.started) {
                 this.started = true;
-                onclick = null;
+                this.wrap.onclick = null;
                 if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
                 this.fadeOut(this.msg);
                 setTimeout(() => {
