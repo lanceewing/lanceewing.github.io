@@ -344,7 +344,7 @@ class Game {
             if (!this.started) {
                 this.started = true;
                 onclick = null;
-                if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
+                //if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
                 this.fadeOut(this.msg);
                 setTimeout(() => {
                     this.msg.style.display = 'none'

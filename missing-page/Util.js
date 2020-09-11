@@ -134,7 +134,10 @@ class Util {
         // These chars are from different Unicode version, starting at 6.
         //let unicodeVersion = [...'🐄🙂🧀🥕🧛🧪🪓🛖'].reduce((a, c) =>  a + (Util.renderEmoji(c, 50, 50, 0, 0)[2]? 1 : 0), 5);
         //if (Util.twemoji = unicodeVersion < 13) document.body.classList.add('twemoji');
-        if (Util.twemoji = !Util.renderEmoji('🩸', 100, 100, 0, 0)[2]) document.body.classList.add('twemoji');
+        let NO_EMOJI = Util.renderEmoji('\uffff', 100, 100, 0, 0)[0].toDataURL();
+        if (Util.twemoji = (Util.renderEmoji('🪓', 100, 100, 0, 0)[0].toDataURL() == NO_EMOJI)) {
+            document.body.classList.add('twemoji');
+        }
         Util.WIN = navigator.platform.indexOf('Win') > -1;
     }
 }
