@@ -293,7 +293,7 @@ class Game {
         this.msg = document.getElementById('msg');
         this.defineCustomElements();
         this.logic = new Logic(this);
-        //this.sound = new Sound();
+        this.sound = new Sound();
         this.emojiMap = new Map();
         this.start();
     }
@@ -338,22 +338,22 @@ class Game {
         this.verbIcon = '🚶';
 
         this.started = false;
-        //this.fadeOut(this.wrap);
+        this.fadeOut(this.wrap);
 
-        //window.ontouchstart = e => {
-        //    if (!this.started) {
-        //        this.started = true;
-        //        window.ontouchstart = null;
-                //if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
+        onclick = e => {
+            if (!this.started) {
+                this.started = true;
+                onclick = null;
+                if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
                 this.fadeOut(this.msg);
-        //        setTimeout(() => {
+                setTimeout(() => {
                     this.msg.style.display = 'none'
-        //            //this.sound.playSong();
+                    this.sound.playSong();
                     this.init();
                     this.loop();
-        //        }, 200);
-        //   }
-        //}
+                }, 200);
+            }
+        }
     }
 
     /**
