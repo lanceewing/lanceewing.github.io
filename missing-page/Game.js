@@ -283,7 +283,6 @@ class Game {
      * Constructor for Game.
      */
     constructor() {
-        console.log('1');
         this.screen = document.getElementById('screen');
         this.wrap = document.getElementById('wrap');
         this.overlay = document.getElementById('overlay');
@@ -297,7 +296,6 @@ class Game {
         this.logic = new Logic(this);
         this.sound = new Sound();
         this.emojiMap = new Map();
-        console.log('3');
         this.start();
     }
 
@@ -317,8 +315,6 @@ class Game {
     start() {
         this.resizeScreen();
         onresize = e => this.resizeScreen(e);
-
-        console.log('4');
 
         // Register click event listeners for item list arrow buttons.
         document.getElementById("up").onclick = e => this.scrollInv(1);
@@ -342,18 +338,13 @@ class Game {
         });
         this.verbIcon = '🚶';
 
-        console.log('5');
-
         this.started = false;
         this.fadeOut(this.wrap);
 
-        console.log('6');
-
-        this.wrap.onclick = e => {
-            console.log('click');
+        this.wrap.onclick = this.wrap.ontouchstart = e => {
             if (!this.started) {
                 this.started = true;
-                this.wrap.onclick = null;
+                this.wrap.touchstart = this.wrap.onclick = null;
                 if (document.fullscreenEnabled) document.documentElement.requestFullscreen();
                 this.fadeOut(this.msg);
                 setTimeout(() => {
