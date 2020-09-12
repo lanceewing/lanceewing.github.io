@@ -1,17 +1,13 @@
 class Util {
 
     /**
-     * Whether the Twemoji font is active or not.
-     */
-    static twemoji = false;
-
-    /**
      * Renders the given emoji text at that given font size on a canvas. Returns that canvas.
      * 
      * @param {string} emojiText The emoji text to render.
      * @param {number} width The desired width of the canvas.
      * @param {number} height The desired height of the canvas.
      * @param {boolean} flip True to horizontally flip the image; otherwise false.
+     * @param {boolean} fill True to set the fill style to red; otherwise false.
      * 
      * @returns The created canvas with the rendered emoji text at the given font size.
      */
@@ -21,9 +17,7 @@ class Util {
         canvas.height = size + (size / 8) + 20;
         canvas.width = size * 1.4 + 10;
         let ctx = canvas.getContext('2d');
-        //ctx.font = `${size}px ${Util.twemoji? 'twemoji' : 'Segoe UI Emoji'}`;
-        // TODO: We could try once to render at actual size, then fall back on 250px.
-        ctx.font = `${!Util.twemoji || size < 250? size : 250}px ${Util.twemoji? 'twemoji' : 'Segoe UI Emoji'}`;
+        ctx.font = `${size}px 'Segoe UI Emoji'`;
         ctx.textBaseline = 'bottom';
         if (fill) ctx.fillStyle = 'red';
         ctx.fillText(emojiText, 5, canvas.height - 5);
@@ -38,7 +32,6 @@ class Util {
         emojiCanvas.width = width;
         emojiCanvas.height = height;
         let emojiCtx = emojiCanvas.getContext('2d');
-        let exists = false;
         if (newWidth > 0 && newHeight > 0) {
             emojiCtx.shadowColor = "black";
             emojiCtx.shadowBlur = 3;
@@ -51,10 +44,9 @@ class Util {
                 minX-1, minY-1, newWidth, newHeight,
                 0, 0, width, height,
             );
-            exists = true;
         }
 
-        return [ emojiCanvas, emojiCtx.getImageData(0, 0, width, height), exists ];
+        return [ emojiCanvas, emojiCtx.getImageData(0, 0, width, height) ];
     }
 
     /**
@@ -126,20 +118,6 @@ class Util {
 
         return [minX, minY, maxX, maxY];
     }
-
-    /**
-     * Detects what Emoji Unicode version is available by default.
-     */
-    static detectEmojiVersion() {
-        // These chars are from different Unicode version, starting at 6.
-        //let unicodeVersion = [...'🐄🙂🧀🥕🧛🧪🪓🛖'].reduce((a, c) =>  a + (Util.renderEmoji(c, 50, 50, 0, 0)[2]? 1 : 0), 5);
-        //if (Util.twemoji = unicodeVersion < 13) document.body.classList.add('twemoji');
-        let NO_EMOJI = Util.renderEmoji('\uffff', 100, 100, 0, 0)[0].toDataURL();
-        if (Util.twemoji = (Util.renderEmoji('🪓', 100, 100, 0, 0)[0].toDataURL() == NO_EMOJI)) {
-            document.body.classList.add('twemoji');
-        }
-        Util.WIN = navigator.platform.indexOf('Win') > -1;
-    }
 }
 
-Util.detectEmojiVersion();
+Util.WIN = navigator.platform.indexOf('Win') > -1;
