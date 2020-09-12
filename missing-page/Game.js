@@ -104,7 +104,7 @@ class Game {
         [ 2,  2, 'tree',               '🌴', 300, 300,   2730,  825, 30 ],
         [ 2,  2, 'tree',               '🌴', 300, 300,   3690,  825, 30 ],
         [ 2, 30, 'pharmacy',           '🏬', 400, 400,   280,   700, , , 16 ],
-        [ 2,  1, 'shopping_cart',      '🛒', 100, 100,   720,   650 ],
+        [ 2,  2, 'shopping_cart',      '🛒', 100, 100,   720,   650 ],
         [ 2, 30, 'store',              '🏪', 400, 400,   1240,  700, , , 17 ],
         [ 2, 30, 'post_office',        '🏤', 400, 400,   2200,  700, , , 18 ],
         [ 2, 30, 'hotel',              '🏨', 400, 400,   3160,  700, , , 19 ],
@@ -119,7 +119,7 @@ class Game {
         [ 17, 1, 'banana',             '🍌', 40,  40,    1340,  670, , 1002 ], 
 
         // Room 18 - In post office
-        [ 18, 0, 'selfservice',        '🖥️',  200, 150,   2300,  450, , 1002 ], 
+        [ 18, 0, 'self_service',        '🖥️',  200, 150,   2300,  450, , 1002 ], 
 
         // Room 19 - In hotel
         [ 19, 1, 'bellhop',            '🛎️',  40,  40,    3260,  670, , 1002 ],
@@ -181,7 +181,7 @@ class Game {
         [ 22, 1, 'mask',               '👹', 40,  40,    1340, 670, , 1002 ],
 
         // Room 23 - In school
-        [ 23, 0, 'scientist',          '👩‍🔬', 200, 150,   5180, 450, , 1002 ], 
+        [ 23, 0, 'teacher',            '👩‍🏫', 200, 150,   5180, 450, , 1002 ], 
 
         // Room 24 - In barn
         [ 24, 0, 'farmer',             '👨‍🌾', 200, 150,   6150, 450, , 1002 ], 
@@ -330,7 +330,8 @@ class Game {
         // Note: Firefox ignores custom cursors bigger than 32x32 when near the Window edge.
         let cursorSize = navigator.userAgent.match(/Firefox/)? 32 : 50;
         this.cursors = {};
-        ['🚶','🤚🏼','\u{1F871}','💬','\u{1F873}','⏳','\u{1F874}','👁','\u{1F870}','➕','\u{1F875}','🤏🏼','\u{1F872}','❔','\u{1F877}','🔍','\u{1F876}'].forEach((c,i) => {
+        (true? ['🚶','🤚🏼','⬆️','💬','⬇️','⏳','↖️','👁️','⬅️','➕','↗️','🤏🏼','➡️','❔','↙️','🔍','↘️'] :
+        ['🚶','🤚🏼','\u{1F871}','💬','\u{1F873}','⏳','\u{1F874}','👁️','\u{1F870}','➕','\u{1F875}','🤏🏼','\u{1F872}','❔','\u{1F877}','🔍','\u{1F876}']).forEach((c,i) => {
             let hsy = [cursorSize-1, cursorSize/2][i%2];
             this.cursors[c] = `url(${Util.renderEmoji(c, cursorSize, cursorSize)[0].toDataURL()}) ${cursorSize/2} ${hsy}, auto`;
             document.body.style.setProperty(`--${c}`, this.cursors[c]);
@@ -389,8 +390,10 @@ class Game {
                             this.ego.say("...but went missing in the woods to the west.", 300, () => {
                                 this.ego.moveTo(300, 800, () => {
                                     this.ego.say("Please help me to find him.", 200, () => {
-                                        this.inputEnabled = true;
-                                        this.fadeOut(this.status);
+                                        this.ego.say("Use the Walk, Look, Pick up, and Talk icons below.", 300, () => {
+                                            this.inputEnabled = true;
+                                            this.fadeOut(this.status);
+                                        });
                                     });
                                 });
                             });
