@@ -84,7 +84,11 @@ else if (brightness < 70) {
 
 The first case, where the alpha channel is zero, is simply the fill flooding into the transparent background parts of the canvas. The second case, where RGB are all zero, is where the pixel is pure black and therefore deemed to be part of the black outline, and so the fill floods into that pixel and it is set to transparent.
 
-If we stopped there, and didn't have the third case, then the resulting image would have a jagged edge. To avoid this, the third case takes advantage of the existing antialiasing between the inside edge of the black outline and the colourful interior of the emoji. It detects this by calculating the perceived brightness of the pixel, and then if it is below a certain threshold, it adjusts the alpha channel of the pixel to match the brightness. This has the effect of making the edge of the emoji look smooth after removing the black outline.
+If we stopped there, and didn't have the third case, then the resulting image would have a jagged edge (see tree on the left in the image below):
+
+![image info](/images/tree-jagged-edges.png)
+
+To avoid this, the third case takes advantage of the existing antialiasing between the inside edge of the black outline and the colourful interior of the emoji. It detects this by calculating the perceived brightness of the pixel, and then if it is below a certain threshold, it adjusts the alpha channel of the pixel to match the brightness. This has the effect of making the edge of the emoji look smooth after removing the black outline.
 
 The threshold of 70 was determined by trial and error after testing the code with various Windows emojis.
 
@@ -95,6 +99,8 @@ If an emoji is drawn at a large font size, let's say 300px, then removing the th
 Consider also that in order to allow the flood fill to spread the whole way around the emoji, the initial canvas size is deliberately made higher and wider than the desired height and width. Not too much though, otherwise time would be wasted filling into areas that are not needed.
 
 As a consequence of the two factors mentioned above, after the black outline is removed there is quite a noticeable empty area beyond the four edges of the emoji that needs to be trimmed off. The canvas needs to be cropped so that its width an height exactly fits the emoji.
+
+![image info](/images/school-house-crop.png)
 
 With this in mind, the fill algorithm also keeps track of where the four visible edges of the emoji are as it is spreading around the emoji:
 
@@ -138,6 +144,10 @@ In the code above, the canvas variable is the original canvas that was manipulat
 
 Note that we also have a small shadow blur. This isn't required, but it does give it a slightly smoother and more defined edge.
 
+## Performance
+
+There is certainly an overhead in performing this kind of image manipulation, so we need to keep it to a minimum. Sometimes the same emoji needs to be drawn many times in the same scene, such as a background of many trees of the same type and size. To address this, the game caches the image data for a given emoji and size, so that if the same combination is encountered again, in any scene, it uses the cached image data instead of performing the same image manipulation.
+
 ## The end result
 
 Removing the black outline from the Windows emojis in this way allows more attractive scenes to be created. If we render the same scene shown earlier in this post using the described approach, then the end result is as follows:
@@ -146,6 +156,6 @@ Removing the black outline from the Windows emojis in this way allows more attra
 
 That's much nicer!
 
-Obviously this is only of concern on a Windows machine, but it's likely that many of the participants in the js13kgames contest are using Windows and will see the game like this, and since the participants are the voters, it is an important consideration.
+Obviously this rendering technique is only of concern on a Windows machine, but it's likely that many of the participants in the js13kgames contest are using Windows and will see the game like this, and since the participants are the voters, it is an important consideration.
 
 Windows isn't the only operating system that I had to cater for in choosing to use emojis. The topic of the next post in this series looks at some of the things I discovered about emoji fonts in relation to cross platform and browser compatibility.

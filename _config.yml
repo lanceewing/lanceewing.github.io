@@ -22,7 +22,7 @@ title: LANCE EWING
 email: lance.ewing@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Lance Ewing's personal blog, mainly about technical topics, such as HTML5 game programming,
-  js13kgames, gamedevjs, Sierra On-line AGI graphic adventure games, and Music and Sound generation with Javascript.
+  js13kgames, gamedev.js, Sierra On-line AGI graphic adventure games, and Music and Sound generation with Javascript.
   Occassionally I also blog about 8-bit computer emulation, computer chip reverse engineering, digital electronics, 
   and in general about how computers work.
 baseurl: "" # the subpath of your site, e.g. /blog
