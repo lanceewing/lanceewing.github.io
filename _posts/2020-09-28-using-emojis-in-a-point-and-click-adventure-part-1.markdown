@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Emojis in a Point and Click Adventure - Part 1"
 date:   2020-09-27 13:47:15 +0100
-categories: jekyll update
+categories: blog js13k
 ---
 
 This year I entered the [js13kgames](https://js13kgames.com/) contest for the 6th time with a game called ["The King's Missing Page"](https://2020.js13kgames.com/entries/the-kings-missing-page). This article is part 1 in a series of blog posts that discuss some of the challenges I faced in creating this game.
