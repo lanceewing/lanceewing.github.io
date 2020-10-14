@@ -98,7 +98,7 @@ If an emoji is drawn at a large font size, let's say 300px, then removing the th
 
 Consider also that in order to allow the flood fill to spread the whole way around the emoji, the initial canvas size is deliberately made higher and wider than the desired height and width. Not too much though, otherwise time would be wasted filling into areas that are not needed.
 
-As a consequence of the two factors mentioned above, after the black outline is removed there is quite a noticeable empty area beyond the four edges of the emoji that needs to be trimmed off. The canvas needs to be cropped so that its width an height exactly fits the emoji.
+As a consequence of the two factors mentioned above, after the black outline is removed there is quite a noticeable empty area beyond the four edges of the emoji that needs to be trimmed off. The canvas needs to be cropped so that its width and height exactly fits the emoji.
 
 ![image info](/images/school-house-crop.png)
 
