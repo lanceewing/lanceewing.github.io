@@ -1,0 +1,20 @@
+.prev-next {
+    width: 100%;
+}
+
+.prev-next a {
+    display: block;
+    width: 160px;
+    float: left;
+    margin: 1em 0;
+    padding-left: 13px;
+    text-indent: -13px;
+}
+  
+.prev-next .next {
+    text-align: right;
+    float: right;
+    padding-right: 13px;
+    text-indent: -13px;
+    direction: rtl;
+}
