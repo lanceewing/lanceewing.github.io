@@ -6,6 +6,8 @@ permalink: /games/
 
 The following are links to the games that I have submitted to the js13kgames and gamedevjs game jam contests.
 
+[I've Been Ghosting](https://lanceewing.github.io/ive-been-ghosting/)
+
 [The King's Missing Page](https://js13kgames.com/games/the-kings-missing-page/index.html)
 
 [Alpha Euphoria](https://lanceewing.itch.io/alpha-euphoria)
