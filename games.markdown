@@ -14,7 +14,7 @@ The following are links to the games that I have submitted to the js13kgames and
 
 [Back to Life Adventure](https://js13kgames.com/games/back-to-life-adventure/index.html)
 
-[Astro Miners](https://js13kgames.com/games/astro-miners/index.html)
+[Astro Miners](https://lanceewing.github.io/astro-miners/)
 
 [Down the Drain](https://lanceewing.github.io/down-the-drain/)
 
