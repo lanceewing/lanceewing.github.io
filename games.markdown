@@ -12,7 +12,7 @@ The following are links to the games that I have submitted to the js13kgames and
 
 [Alpha Euphoria](https://lanceewing.itch.io/alpha-euphoria)
 
-[Back to Life Adventure](https://js13kgames.com/games/back-to-life-adventure/index.html)
+[Back to Life](https://lanceewing.github.io/back-to-life/)
 
 [Astro Miners](https://lanceewing.github.io/astro-miners/)
 
