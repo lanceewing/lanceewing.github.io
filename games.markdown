@@ -16,8 +16,8 @@ The following are links to the games that I have submitted to the js13kgames and
 
 [Astro Miners](https://js13kgames.com/games/astro-miners/index.html)
 
-[Down the Drain](https://js13kgames.com/games/down-the-drain/index.html)
+[Down the Drain](https://lanceewing.github.io/down-the-drain/)
 
-[You've Been Glitched](http://youve-been-glitched.appspot.com/)
+[You've Been Glitched](https://lanceewing.github.io/you-ve-been-glitched/)
 
-[Shadow Ball](https://js13kgames.com/games/shadow-ball/index.html)
+[Shadow Ball](http://lanceewing.github.io/shadow-ball-js13k/)
