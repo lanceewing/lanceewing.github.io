@@ -10,7 +10,7 @@ The following are links to the games that I have submitted to the js13kgames and
 
 [The King's Missing Page](https://js13kgames.com/games/the-kings-missing-page/index.html)
 
-[Alpha Euphoria](https://lanceewing.itch.io/alpha-euphoria)
+[Alpha Euphoria](https://lanceewing.github.io/alpha-euphoria/)
 
 [Back to Life](https://lanceewing.github.io/back-to-life/)
 
