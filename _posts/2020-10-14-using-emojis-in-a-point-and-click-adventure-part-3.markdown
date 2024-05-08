@@ -263,7 +263,3 @@ As a final point, and although I didn't do this for "The King's Missing Page", i
 let favicon = document.getElementById('favicon');
 favicon.href = Util.renderEmoji('👁️', 32, 32).toDataURL();
 {% endhighlight %}
-
-## A Next Part?
-
-That is all for this part, and in fact that is probably everything from a technical perspective that I planned to cover in this series of articles. In the next part, which won't be an official part of this series as such, I intend to go through the feedback I received on "The King's Missing Page".
