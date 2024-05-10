@@ -21,3 +21,7 @@ The following are links to the games that I have submitted to the js13kgames and
 [You've Been Glitched](https://lanceewing.github.io/you-ve-been-glitched/)
 
 [Shadow Ball](http://lanceewing.github.io/shadow-ball-js13k/)
+
+In addition to the above, check out my AGI game demo, [The Ruby Cast](https://agi.sierra.games/#/id/ruby), running in AGILE.
+
+[AGILE](https://agi.sierra.games/) is a way to run Sierra On-Line's AGI games in a web browser!
