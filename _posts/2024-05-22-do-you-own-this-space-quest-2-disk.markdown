@@ -87,7 +87,7 @@ The memory map also gives us a fairly complete list of the modules and source fi
 
 In 1984, Sierra On-Line was lucky to survive as a business. Some time around the release of King's Quest, in May/June of that year, Ken Williams had to lay off around 100 of his employees, reducing the head count from approximately 130 down to about 30. Although it was a struggle, part of what turned their fortunes around was the success of the AGI adventure game system and the games that were built using it. By the end of 1984, King's Quest had entered the top 20 on the software sales charts for computer games. It would stay there for the next half year, right up until the release of King's Quest II, and it wasn't long until King's Quest II was also in the charts. This was helped a lot by the deal that Sierra made with Tandy Radio Shack to sell Tandy versions of the games in the Radio Shack stores.
 
-The AGI games continued to be best sellers from 1985 to 1988. Over those years, the AGI interpreter was Sierra On-Line's primary means of making money and therefore a core part of their intellectual property. They not only invented the 3D animated graphic adventure game genre but also had a head start on their competitors that lasted several years. It is safe to say that the source code for the AGI interpreter is something that Sierra would not have wanted to fall into the hands of their competitors.
+The AGI games continued to be best sellers from 1985 to 1988. Over those years, the AGI interpreter was Sierra On-Line's primary means of making money and therefore a core part of their intellectual property. They not only invented the 3D animated graphic adventure game genre but also had a head start on their competitors that lasted several years. It is safe to say that the source code for the AGI interpreter is something that Sierra would have preferred didn't fall into the hands of their competitors.
 
 For 70% of the source code to end up being copied en masse and sent out to tens, if not hundreds of thousands of their customers, was a big blunder.
 
@@ -99,9 +99,9 @@ This meant that potentially hundreds of thousands of SQ2 disks sent to customers
 
 ## Dodged a bullet
 
-It was almost certainly an unintentional mistake, but if anyone at Sierra had realised that this happened at the time, then it may have been a sackable offence. Surprisingly, no one appeared to have noticed that this happened, not Sierra, not their competitors or their customers, and it was only discovered decades later, the first known discovery of it by online user NewRisingSun in October 2016.
+It was almost certainly an unintentional mistake. Surprisingly, no one appeared to have noticed that this happened, not Sierra, not their competitors or their customers, and it was only discovered decades later, the first known discovery of it by online user NewRisingSun in October 2016.
 
-It is also fortuitous that this happened at the end of the AGI era. In March 1988, Sierra had already developed their SCI adventure game system and were about to release the first game using it, which would be King's Quest IV. So "losing" the AGI interpreter source code into the public domain, should someone have noticed it, may not have been as drastic as it would have been only a year or two before that.
+It is also fortuitous that this happened at the end of the AGI era. In March 1988, Sierra had already developed their SCI adventure game system and were about to release the first game using it, which would be King's Quest IV. So "losing" the AGI interpreter source code into the public domain, should someone have noticed it, may not have been the issue it could have been only a year or two before that.
 
 It makes for an interesting digital archeaology story though, and it allows us, 36 years later, to see how our heros at Sierra On-Line wrote their AGI interpreter.
 
