@@ -99,7 +99,7 @@ This meant that potentially hundreds of thousands of SQ2 disks sent to customers
 
 ## Dodged a bullet
 
-It was almost certainly an unintentional mistake, but if anyone at Sierra had realised that this happened at the time, then it may have been a sackable offence. Surprisingly, no one appeared to have noticed that this happened, not Sierra, not their competitors or their customers, and it was only discovered decades later.
+It was almost certainly an unintentional mistake, but if anyone at Sierra had realised that this happened at the time, then it may have been a sackable offence. Surprisingly, no one appeared to have noticed that this happened, not Sierra, not their competitors or their customers, and it was only discovered decades later, the first known discovery of it by online user NewRisingSun.
 
 It is also fortuitous that this happened at the end of the AGI era. In March 1988, Sierra had already developed their SCI adventure game system and were about to release the first game using it, which would be King's Quest IV. So "losing" the AGI interpreter source code into the public domain, should someone have noticed it, may not have been as drastic as it would have been only a year or two before that.
 
