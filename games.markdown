@@ -6,6 +6,8 @@ permalink: /games/
 
 The following are links to the games that I have submitted to the js13kgames and gamedevjs game jam contests.
 
+[The 13th Door](https://lanceewing.github.io/the-13th-door/)
+
 [I've Been Ghosting](https://lanceewing.github.io/ive-been-ghosting/)
 
 [The King's Missing Page](https://lanceewing.github.io/the-kings-missing-page/)
